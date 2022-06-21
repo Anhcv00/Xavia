@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <!-- <img src="img/logo.PNG" alt=""> -->
+                <img src="img/IMG_1866.PNG" alt="">
+                <div class="login">
+                    <span>LOGIN</span>
+                </div>
+                <br>
+
+                <div class="search">
+                    <div class="menu-search">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                    <div class="menu-cart">
+                        <a href="https://forms.gle/uo8L52SQn7Z4vwFG7"><i class='bx bxs-cart-add'></i></a>
+                         
+                     </div>
+                    <div class="text">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    </div>
+                    <div class="button">
+                        <i class='bx bx-search-alt'></i>
+                        <i class='bx bxs-cart-add'></i>
+                    </div>
+
+                </div>
+            </header>
+            <div class="content">
+                <div class="back" >
+                    <a href="index.html"> <i class='bx bx-arrow-back'></i></a> 
+                    <span> <a href="index.html" style="color: white; text-decoration: none;"> Trang chủ </a>/ All SHOP / DÂY ĐEO </span>
+                </div>
+            </div>
+            <div class="content">
+                <section id="Product-show">
+                    <div class="aspect-ratio-169">
+                        <img src="img/2.png" alt="">
+                        <img src="img/img-cauvong.JPG" alt="">
+                        <img src="img/img-cauvong2.JPG" alt="">
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="dot-container">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <!-- <div class="dot"></div> -->
+                    </div>
+                </section>
+                <div class="product-order">
+                    <div class="product-tittle">
+                        <span style="font-style: italic;">Sản phẩm 2</span>
+                    </div>
+                    <div class="product-price" style="color: red;">
+                       50,000 <sup>đ</sup> <span style="color: white"> 59,000 <sup>đ</sup></span>
+                    </div>
+                    <div class="product-button">
+                        <a href="https://forms.gle/uo8L52SQn7Z4vwFG7"><button type="submit">Click để mua
+                                hàng</button></a>
+                    </div>
+                    <div class="product-description">
+                       <!-- <div style="text-align: center;"> <span style="font-weight: bold; font-size: 20px ; color: red; text-transform: uppercase;"> Mô tả </span> <br></div> -->
+                        <br>
+                        <div style="text-align: center;"><span style="font-weight: bold; font-size: 20px ;text-transform: uppercase; color: blue;">🌈 MY GENDER MY WORD 🌈 </span> </div>
+                        <br>
+                        <br>
+                        <span>
+                            &emsp; 🌈&ensp;MY GENDER MY WORD được lấy cảm hứng từ lá cờ lục sắc đại diện cho cộng đồng LGBTQ+, với thông điệp cuộc sống này là của chính bạn, dẫu chúng ta có khác màu da, tiếng nói hay địa vị thì chung quy lại vẫn chỉ là những linh hồn lạc lối đang trên hành trình tìm về lại chính mình.
+                        </span>     <br>
+                        <span> &emsp; Không một ai có quyền được chỉ trích hay "kỳ thị" người khác vì giới tính này là của tôi, bản sắc này là của tôi và tôi toả sáng khi được là chính mình. &ensp;🌈</span>
+                       
+                      
+                    </div>
+                </div>
+
+            </div>
+            <footer>
+                <div class="container-fluid">
+                    <div class="footer">
+                        <div class="line">
+                            <p>ONLINE ONLY</p>
+                            <a href="https://www.facebook.com/xaviauisyou">https://www.facebook.com/xaviauisyou</a> <br>
+                        
+                            <p>Email : Xavia.project@gmail.com</p>
+                            <p>Contact: (+84) 852 539 279 (Ms.Vy)</p>
+                        </div>
+                        <div class="menu-footer">
+                            <ul>
+                                <li><a href="#">Tìm kiếm</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Chính sách đổi trả</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+<script>
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+    const imgContainer = document.querySelector('.aspect-ratio-169')
+    const dotItem = document.querySelectorAll(".dot")
+    const imgNumber = imgPosition.length
+    let index = 0
+    imgPosition.forEach(function (image, index) {
+        image.style.left = index * 100 + "%"
+        dotItem[index].addEventListener("click", function () {
+            slide(index)
+        })
+    })
+    function imgSlide() {
+        index++;
+        if (index >= imgNumber) { index = 0 }
+        slide(index)
+
+
+    }
+    function slide(index) {
+        imgContainer.style.left = "-" + index * 100 + "%"
+        const dotActive = document.querySelector('.active')
+        dotActive.classList.remove("active")
+        dotItem[index].classList.add("active")
+    }
+    setInterval(imgSlide, 3000)
+</script>
+
+</html>

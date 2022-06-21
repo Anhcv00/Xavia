@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <!-- <img src="img/logo.PNG" alt=""> -->
+                <img src="img/IMG_1866.PNG" alt="">
+                <div class="login">
+                    <span>LOGIN</span>
+                </div>
+                <br>
+
+                <div class="search">
+                    <div class="menu-search">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                    <div class="menu-cart">
+                        <a href="https://forms.gle/uo8L52SQn7Z4vwFG7"><i class='bx bxs-cart-add'></i></a>
+                         
+                     </div>
+                    <div class="text">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    </div>
+                    <div class="button">
+                        <i class='bx bx-search-alt'></i>
+                        <i class='bx bxs-cart-add'></i>
+                    </div>
+
+                </div>
+            </header>
+            <div class="content">
+                <div class="back" >
+                    <a href="index.html"> <i class='bx bx-arrow-back'></i></a> 
+                    <span> <a href="index.html" style="color: white; text-decoration: none;"> Trang chủ </a>/ All SHOP / DÂY ĐEO </span>
+                </div>
+            </div>
+            <div class="content">
+                <section id="Product-show">
+                    <div class="aspect-ratio-169">
+                        <img src="img/1.png" alt="">
+                        <img src="img/Tự ti (1).JPG" alt="">
+                        <img src="img/Tự ti.JPG" alt="">
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="dot-container">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <!-- <div class="dot"></div> -->
+                    </div>
+                </section>
+                <div class="product-order">
+                    <div class="product-tittle">
+                        <span style="font-style: italic;">Sản phẩm 1</span>
+                    </div>
+                    <div class="product-price" style="color: red;">
+                       50,000 <sup>đ</sup> <span style="color: white"> 59,000 <sup>đ</sup></span>
+                    </div>
+                    <div class="product-button">
+                        <a href="https://forms.gle/uo8L52SQn7Z4vwFG7"><button type="submit">Click để mua
+                                hàng</button></a>
+                    </div>
+                    <div class="product-description">
+                       <!-- <div style="text-align: center;"> <span style="font-weight: bold; font-size: 20px ; color: red; text-transform: uppercase;"> Mô tả </span> <br></div> -->
+                        <br>
+                        <div style="text-align: center;"><span style="font-weight: bold; font-size: 20px ;text-transform: uppercase; color: yellow;"> Shine in your own light </span> </div>
+                        <br>
+                        <br>
+                        <span>
+                            &emsp;🌟 Chúng ta có thể có nhiều cách để sống, vì vậy cũng có nhiều cách để toả sáng. Đừng so sánh mình với ai để rồi tự ti, nép vào khoảng tối và trở thành chiếc bóng mờ bơ vơ, lạc lõng. <br>
+                            &emsp;✨ Với tone màu chủ đạo là ánh vàng cùng với slogan “Shine in your own light” Xavia muốn thông qua chiếc lanyard này gửi gắm đến bạn một thông điệp rằng dù có là mặt trăng, mặt trời, một vì sao nhỏ hay là ai đi nữa cũng sẽ có một sứ mệnh riêng. Vì vậy hãy là chính bạn hãy toả sáng trên bầu trời của riêng mình nhé bạn của tôi ơi…
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <footer>
+                <div class="container-fluid">
+                    <div class="footer">
+                        <div class="line">
+                            <p>ONLINE ONLY</p>
+                            <a href="https://www.facebook.com/xaviauisyou">https://www.facebook.com/xaviauisyou</a> <br>
+                        
+                            <p>Email : Xavia.project@gmail.com</p>
+                            <p>Contact: (+84) 852 539 279 (Ms.Vy)</p>
+                        </div>
+                        <div class="menu-footer">
+                            <ul>
+                                <li><a href="#">Tìm kiếm</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Chính sách đổi trả</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+<script>
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+    const imgContainer = document.querySelector('.aspect-ratio-169')
+    const dotItem = document.querySelectorAll(".dot")
+    const imgNumber = imgPosition.length
+    let index = 0
+    imgPosition.forEach(function (image, index) {
+        image.style.left = index * 100 + "%"
+        dotItem[index].addEventListener("click", function () {
+            slide(index)
+        })
+    })
+    function imgSlide() {
+        index++;
+        if (index >= imgNumber) { index = 0 }
+        slide(index)
+
+
+    }
+    function slide(index) {
+        imgContainer.style.left = "-" + index * 100 + "%"
+        const dotActive = document.querySelector('.active')
+        dotActive.classList.remove("active")
+        dotItem[index].classList.add("active")
+    }
+    setInterval(imgSlide, 3000)
+</script>
+
+</html>
